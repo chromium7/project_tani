@@ -13,7 +13,7 @@ Create a virtual environment to install dependencies in and activate it:
 
 ```sh
 $ python -m venv env
-$ env\bin\Scripts\activate
+$ env\Scripts\activate
 ```
 
 Then install the dependencies:
@@ -31,7 +31,7 @@ Once `pip` has finished downloading the dependencies:
 (env)$ python manage.py runserver
 ```
 
-And navigate to `http://127.0.0.1:8000/
+And navigate to `http://127.0.0.1:8000/`
 
 ## Tests
 
