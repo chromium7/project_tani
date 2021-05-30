@@ -33,6 +33,20 @@ Once `pip` has finished downloading the dependencies:
 
 And navigate to `http://127.0.0.1:8000/`
 
+## Frontend
+
+To edit the React frontend, first `cd` into the `frontend` directory in a separate console
+
+```sh
+$ cd frontend
+```
+
+Run the script to watch changes in react
+
+```sh
+$ npm run dev
+```
+
 ## Tests
 
 To run the tests, `cd` into the directory where `manage.py` is:
