@@ -11,7 +11,7 @@ const Mobile = styled.div`
 `;
 
 const Navbar = styled.div`
-  background: #333333;
+  background: var(--color-primary);
   display: flex;
   justify-content: space-between;
   width: 100vw;
@@ -38,7 +38,8 @@ const Overlay = styled.div`
 `;
 
 const Menu = styled.div`
-  background: blue;
+  background: var(--color-primary);
+  color: #ffffff;
   position: absolute;
   width: 80vw;
   height: 100vh;

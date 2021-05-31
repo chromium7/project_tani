@@ -6,7 +6,7 @@ const Background = styled.div`
   display: none;
   @media only screen and (min-width: 576px) {
     display: block;
-    background: #333333;
+    background: var(--color-primary);
     color: #ffffff;
   }
 `;
