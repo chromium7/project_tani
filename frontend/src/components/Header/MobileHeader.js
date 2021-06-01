@@ -1,5 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import {
+  FaBars,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaFacebookSquare,
+  FaTwitterSquare,
+  FaInstagramSquare,
+  FaWhatsappSquare,
+  FaLinkedin,
+} from "react-icons/fa";
 
 const Mobile = styled.div`
   display: block;
@@ -14,17 +24,30 @@ const Navbar = styled.div`
   background: var(--color-primary);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100vw;
   color: #ffffff;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+`;
+
+const NavbarSpace = styled.div`
+  position: relative;
+  width: 100vw;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  pointer-events: none;
 `;
 
 const Overlay = styled.div`
   background: #333333;
   opacity: 60%;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   transition: opacity 0.4s;
@@ -37,10 +60,10 @@ const Overlay = styled.div`
   }
 `;
 
-const Menu = styled.div`
+const MenuContainer = styled.div`
   background: var(--color-primary);
   color: #ffffff;
-  position: absolute;
+  position: fixed;
   width: 80vw;
   height: 100vh;
   top: 0;
@@ -52,6 +75,40 @@ const Menu = styled.div`
   }
 `;
 
+const MenuTitle = styled.h3`
+  text-align: center;
+  margin-top: 1rem;
+  color: lightblue;
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+`;
+
+const MenuItem = styled.ul`
+  margin-left: 10px;
+  list-style-type: none;
+
+  &.menu li {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+
+    &.active {
+      border-left: solid lightgreen 5px;
+      padding-left: 5px;
+      color: rgba(255, 255, 255, 1);
+      font-weight: 600;
+    }
+    svg {
+      font-size: 0.8rem;
+      margin: 0 0.4rem;
+    }
+  }
+`;
+
 export default function MobileHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   function handleMenu(e) {
@@ -59,14 +116,55 @@ export default function MobileHeader() {
   }
   return (
     <Mobile>
+      <NavbarSpace>LOGO</NavbarSpace>
       <Navbar className="container-sm">
         <div>LOGO</div>
-        <div onClick={handleMenu}>menu</div>
+        <FaBars onClick={handleMenu} />
       </Navbar>
       <Overlay className={menuOpen ? "" : "hidden"} onClick={handleMenu} />
-      <Menu className={menuOpen ? "" : "hidden"}>
-        <h3>ALLO</h3>
-      </Menu>
+      <MenuContainer className={menuOpen ? "" : "hidden"}>
+        <MenuTitle>Logo</MenuTitle>
+        <MenuItem className="menu">
+          <li className="active">Home</li>
+          <li>Product</li>
+          <li>Testimony</li>
+          <li>About</li>
+        </MenuItem>
+        <MenuTitle>Contact us</MenuTitle>
+        <MenuItem>
+          <li>
+            <FaPhoneAlt />
+            <span>+62 81123456789</span>
+          </li>
+          <li>
+            <FaEnvelope />
+            <span>@example.example.com</span>
+          </li>
+        </MenuItem>
+        <MenuTitle>Social Media</MenuTitle>
+        <MenuItem>
+          <li>
+            <FaFacebookSquare />
+            Facebook
+          </li>
+          <li>
+            <FaTwitterSquare />
+            Twitter
+          </li>
+          <li>
+            <FaInstagramSquare />
+            Instagram
+          </li>
+          <li>
+            <FaLinkedin />
+            LinkedIn
+          </li>
+          <li>
+            <FaWhatsappSquare />
+            WhatsApp
+          </li>
+        </MenuItem>
+      </MenuContainer>
     </Mobile>
   );
 }
