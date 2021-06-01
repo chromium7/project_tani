@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { GlobalStyles } from "./UI/globalStyles";
 import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
 import { slideIn } from "./UI/animations";
 import styled from "styled-components";
@@ -19,6 +20,7 @@ export default function App() {
         <Hello>
           <h1>Hello world</h1>
         </Hello>
+        <Footer />
       </main>
     </Fragment>
   );
