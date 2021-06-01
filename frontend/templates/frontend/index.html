@@ -12,6 +12,22 @@
       type="text/css"
       href="{% static 'css/index.css' %}"
     />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    {% comment %}
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id={TAGID}"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "TAGID");
+    </script>
+    {% endcomment %}
   </head>
   <body>
     <div id="app">
